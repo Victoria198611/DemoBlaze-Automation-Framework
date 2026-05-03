@@ -23,24 +23,19 @@ jobs:
       - name: Cache Maven packages
         uses: actions/cache@v4
         with:
-          path: |
-            ~/.m2/repository
+          path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+          restore-keys: ${{ runner.os }}-maven-
 
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
-
-      - name: Install Allure
-        uses: simple-elf/allure-report-action@v1.7
 
       - name: Run tests
         run: mvn -B clean test
 
       - name: Generate Allure report
         if: always()
-        run: mvn allure:report
+        run: mvn io.qameta.allure:allure-maven:report
 
       - name: Upload Allure results
         if: always()
