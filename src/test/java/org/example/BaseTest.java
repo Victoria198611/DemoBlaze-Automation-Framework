@@ -1,6 +1,8 @@
 package org.example;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,9 +15,14 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverManager.chromedriver().setup();
+     ChromeOptions options=new ChromeOptions();
+     options.addArguments("--headless=new");
+     options.addArguments("--no-sandbox");
+     options.addArguments("--disable-dev-shm-usage");
+     driver=new ChromeDriver(options);
         driver.manage().window().maximize();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     @AfterMethod
