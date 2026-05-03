@@ -29,6 +29,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install Allure
+        uses: simple-elf/allure-report-action@v1.7
+
       - name: Run tests
         run: mvn -B clean test
 
