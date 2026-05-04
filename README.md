@@ -2,10 +2,10 @@ DemoBlaze Automation Framework
 
 Framework de automatizare end to end pentru testarea aplicației DemoBlaze, construit în Java + Selenium WebDriver + TestNG, cu rapoarte Allure și pipeline CI/CD în GitHub Actions.
 Tehnologii folosite
-•	Java 17
-•	Selenium WebDriver 4.16.1
-•	TestNG 7.8.0
-•	WebDriverManager 5.6.2
+•	Java 
+•	Selenium WebDriver 
+•	TestNG 
+•	WebDriverManager 
 •	Allure TestNG + Allure Maven Plugin
 •	Maven
 •	GitHub Actions (CI/CD)
