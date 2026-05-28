@@ -102,8 +102,8 @@ public class LoginTest extends BaseTest {
         ProductDetailsPage productDetailsPage = new ProductDetailsPage(driver, wait);
         productDetailsPage.addToCart();
     }
-@Test
-public void addToCart(){
+    @Test
+    public void addToCart(){
         HomePage homePage=new HomePage(driver, wait);
         homePage.open();
         homePage.openLoginModal();
@@ -116,5 +116,5 @@ public void addToCart(){
         homePage.openCart();
         CartPage cartPage=new CartPage(driver, wait);
         Assert.assertTrue(cartPage.isProductInCart("Samsung galaxy s7"));
-}
     }
+}

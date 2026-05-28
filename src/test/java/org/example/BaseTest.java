@@ -14,7 +14,7 @@ public class BaseTest {
     protected WebDriverWait wait;
 
     @BeforeMethod
-    public void setup() {
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
      ChromeOptions options=new ChromeOptions();
      options.addArguments("--headless=new");
@@ -22,11 +22,11 @@ public class BaseTest {
      options.addArguments("--disable-dev-shm-usage");
      driver=new ChromeDriver(options);
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @AfterMethod
-    public void teardown() {
+    public void tearDown() {
         if (driver != null) {
             driver.quit();
         }

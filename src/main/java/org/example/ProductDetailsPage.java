@@ -13,11 +13,11 @@ public class ProductDetailsPage extends BasePage {
     public ProductDetailsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
-public void addToCart(){
-    click(addToCartButton);
-}
-public void addProductToCart(){
+    public void addToCart(){
+        click(addToCartButton);
+    }
+    public void addProductToCart(){
         addToCart();
         acceptAlert();
-}
+    }
 }
